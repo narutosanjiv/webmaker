@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title> Abous us </title> 
+    <style>
+      #slideshow { 
+        margin: 50px auto; 
+        position: relative; 
+        width: 640px; 
+        height: 740px; 
+        padding: 10px; 
+        box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+      }
+
+      #slideshow > div { 
+        position: absolute; 
+        top: 10px; 
+        left: 10px; 
+        right: 10px; 
+        bottom: 10px; 
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div id="slideshow">
+     <div>
+        <h2> Introduction To Ruby </h2>
+      </div>
+     <div>
+        </h2> Blocks & Lamda </h2>   
+     </div>
+     <div>
+       Pretty cool eh? This slide is proof the content can be anything.
+     </div>
+    </div> 
+    <script src="jquery-2.1.1.min.js"></script>
+    
+    <script>
+      $(document).ready(function(){
+        $("#slideshow > div:gt(0)").hide();
+
+        setInterval(function() { 
+          $('#slideshow > div:first')
+            .fadeOut(1000)
+            .next()
+            .fadeIn(1000)
+            .end()
+            .appendTo('#slideshow');
+        },  3000); 
+      });
+    </script>
+  </body>
+  
+</html>
